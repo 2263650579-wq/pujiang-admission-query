@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="南京工业大学浦江学院 2024—2025 年各省录取分数与最低位次查询">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; upgrade-insecure-requests">
+  <title>浦江 · 录取位次查询</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#query">跳到查询</a>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="返回首页">
+      <span class="brand-mark" aria-hidden="true">浦</span>
+      <span><strong>南京工业大学浦江学院</strong><small>招生数据参考平台</small></span>
+    </a>
+    <nav aria-label="主导航">
+      <a href="#query">位次查询</a>
+      <a href="#guide">使用说明</a>
+      <a class="nav-pill" href="https://github.com/2263650579-wq/pujiang-admission-query/edit/main/data/admissions.json" target="_blank" rel="noopener noreferrer">数据维护</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> 2024—2025 招生录取数据</p>
+        <h1>让每一个位次，<br><em>找到清晰的方向。</em></h1>
+        <p class="hero-lead">输入省份与科类，查看南京工业大学浦江学院各专业组最低分与录取位次。数据会持续更新，也为未来年份预留了完整结构。</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#query">开始查询 <span>→</span></a>
+          <a class="button quiet" href="#guide">了解数据口径</a>
+        </div>
+        <div class="hero-stats" aria-label="数据概览">
+          <div><strong id="province-count">—</strong><span>覆盖省份</span></div>
+          <div><strong id="record-count">—</strong><span>录取记录</span></div>
+          <div><strong>2</strong><span>招生年份</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="sun"></div>
+        <div class="arch arch-back"></div>
+        <div class="arch arch-front">
+          <span class="arch-label">PUJIANG</span>
+          <span class="arch-year">2025</span>
+        </div>
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="spark spark-one">✦</div>
+        <div class="spark spark-two">✦</div>
+        <div class="badge">向新而行<br><b>GOOD LUCK</b></div>
+      </div>
+    </section>
+
+    <section class="query-section" id="query">
+      <div class="section-heading">
+        <p class="eyebrow"><span></span> ADMISSION LOOKUP</p>
+        <h2>录取位次查询</h2>
+        <p>选择你的生源省份和科类，结果将按年份与分数从新到旧排列。</p>
+      </div>
+      <form class="query-card" id="query-form">
+        <label>生源省份
+          <span class="select-wrap"><select id="province" required><option value="">请选择省份</option></select></span>
+        </label>
+        <label>科类 / 选科
+          <span class="select-wrap"><select id="subject" required disabled><option value="">请先选择省份</option></select></span>
+        </label>
+        <button class="button primary query-button" type="submit">查询录取位次 <span>↗</span></button>
+      </form>
+      <p class="form-hint" id="form-hint">支持物理类、历史类、理科、文科与综合改革省份</p>
+      <div class="results" id="results" aria-live="polite"></div>
+    </section>
+
+    <section class="guide" id="guide">
+      <article class="guide-main">
+        <p class="eyebrow light"><span></span> READ THE DATA</p>
+        <h2>分数会变，<br>位次更值得参考。</h2>
+        <p>跨年份比较时，最低位次通常比分数更有参考价值。请同时关注选科要求、专业组、招生类型和批次变化，不要只看一个数字。</p>
+        <div class="guide-note"><span>i</span><p><strong>重要提醒</strong>本平台为非官方信息整理工具，结果仅供志愿研究。最终请以各省教育考试院和学校招生网发布的信息为准。</p></div>
+      </article>
+      <div class="guide-steps">
+        <article><b>01</b><div><h3>选择省份</h3><p>按考生参加高考的省份查询。</p></div></article>
+        <article><b>02</b><div><h3>匹配科类</h3><p>新高考省份还需核对再选科要求。</p></div></article>
+        <article><b>03</b><div><h3>比较位次</h3><p>横向查看同组两年变化，合理设置志愿梯度。</p></div></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand footer-brand"><span class="brand-mark">浦</span><span><strong>浦江录取数据参考平台</strong><small>清晰 · 审慎 · 持续更新</small></span></div>
+    <p>数据更新：<span id="updated-at">—</span> · <a href="./security.txt">安全说明</a> · <a href="https://github.com/2263650579-wq/pujiang-admission-query/edit/main/data/admissions.json" target="_blank" rel="noopener noreferrer">维护数据</a></p>
+    <p class="copyright">非南京工业大学浦江学院官方网站</p>
+  </footer>
+</body>
+</html>
